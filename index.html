@@ -57,6 +57,7 @@
             width:100vw;
             height:35vh;
             margin-top:90vh;
+            transition: 0.5s;
         }
         .work {
             position: relative;
@@ -73,21 +74,14 @@
         background:rgba(20, 20, 20, 1);
         color:white;
         position:absolute;
-        margin-top:11vh;
-        margin-left:13vw;
+        margin-top:10.5vh;
+        margin-left:44.8vw;
         }
-        #head1 {
-            margin-left: 31.2vw;
+        
+        #head{
+            margin-left: 27vw;
         }
-        #head2 {
-            margin-left: 49.5vw;
-        }
-        #head3 {
-            margin-left: 67.5vw;
-        }
-        #head4 {
-            margin-left: 86vw;
-        }
+        
         #bot2 {
             position:absolute;
             background-color:rgba(0, 0, 0, 0.8);
@@ -149,20 +143,20 @@
         <div id = 'prof'>
         </div>
         <div id = 'mid'>
-            <h3 class = 'title'>Symbol</h3>
-            <h3 class = 'title' id = 'head1'>Symbol</h3>
-            <h3 class = 'title' id = 'head2'>Symbol</h3>
-            <h3 class = 'title' id = 'head3'>Symbol</h3>
-            <h3 class = 'title' id = 'head4'>Symbol</h3>
-            <div class = 'work'>
+            <h3 class = 'title' id = 'head'></h3>
+            <h3 class = 'title' id = 'head1'></h3>
+            <h3 class = 'title' id = 'head2'></h3>
+            <h3 class = 'title' id = 'head3'></h3>
+            <h3 class = 'title' id = 'head4'></h3>
+            <div class = 'work' id = 'picture1'>
             </div>
-            <div class = 'work'>
+            <div class = 'work' id = 'picture2'>
             </div>
-            <div class = 'work'>
+            <div class = 'work' id = 'picture3'>
             </div>
-            <div class = 'work'>
+            <div class = 'work' id = 'picture4'>
             </div>
-            <div class = 'work'>
+            <div class = 'work' id = 'picture5'>
             </div>
         </div>
         <div id = 'bot2'>
@@ -179,5 +173,73 @@
             Cast off the shackles of your slumber!</h3>
         </div>
         <h4 id = 'bio'>Bio</h4>
+        
+        <script>
+            var picture1But = document.getElementById('picture1');
+            var picture2But = document.getElementById('picture2');
+            var picture3But = document.getElementById('picture3');
+            var picture4But = document.getElementById('picture4');
+            var picture5But = document.getElementById('picture5');
+            
+            var symbols = document.getElementById('head');
+            var symbols1 = document.getElementById('head1');
+            var symbols2 = document.getElementById('head2');
+            var symbols3 = document.getElementById('head3');
+            var symbols4 = document.getElementById('head4');
+            var background = document.getElementById('mid');
+            var r = 0;
+            var g = 0;
+            var b = 0;
+            
+            picture1But.onclick = function(){
+                symbols.innerHTML = 'This does nothing, but remember to click multiple times';
+                symbols1.innerHTML = '';
+                symbols2.innerHTML = '';
+                symbols3.innerHTML = '';
+                symbols4.innerHTML = '';
+            }
+            
+            picture2But.onclick = function(){
+                background.style.backgroundColor = "rgb("+r+", "+g+", "+b+")";
+                r = r + 10;
+                symbols1.innerHTML = 'Raises Red';
+                symbols.innerHTML = '';
+                symbols2.innerHTML = '';
+                symbols3.innerHTML = '';
+                symbols4.innerHTML = '';
+            }
+            
+            picture3But.onclick = function(){
+                background.style.backgroundColor = "rgb("+r+", "+g+", "+b+")";
+                g = g + 10;
+                symbols2.innerHTML = 'Raises Green';
+                symbols1.innerHTML = '';
+                symbols.innerHTML = '';
+                symbols3.innerHTML = '';
+                symbols4.innerHTML = '';
+                
+            }
+            picture4But.onclick = function(){
+                background.style.backgroundColor = "rgb("+r+", "+g+", "+b+")";
+                b = b + 10;
+                symbols3.innerHTML = 'Raises Blue';
+                symbols1.innerHTML = '';
+                symbols2.innerHTML = '';
+                symbols.innerHTML = '';
+                symbols4.innerHTML = '';
+            }
+            
+            picture5But.onclick = function(){
+                r = 0;
+                g = 0;
+                b = 0;
+                background.style.backgroundColor = "rgb("+r+", "+g+", "+b+")";
+                symbols4.innerHTML = 'Resets';
+                symbols1.innerHTML = '';
+                symbols2.innerHTML = '';
+                symbols3.innerHTML = '';
+                symbols.innerHTML = '';
+            }
+        </script>
     </body>
 </html>
